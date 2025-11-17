@@ -1,17 +1,10 @@
 import { gql } from "@apollo/client";
 import { useEffect, useState } from "react";
 import client from "../apollo/client";
-
-type Character = {
-  id: number;
-  name: string;
-};
-
-type GetResultsGqlResponseType = {
-  characters: {
-    results: Character[];
-  };
-};
+import {
+  type Character,
+  type GetResultsGqlResponseType,
+} from "../apollo/types.d";
 
 export const FetchResults = () => {
   const [results, setResults] = useState<Character[]>([]);
